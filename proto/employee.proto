@@ -1,0 +1,13 @@
+// 1行目にprotocol buffersのversionを指定
+// 特別な場合をのぞいて「proto3」を指定する
+// syntaxの記載を忘れると、デフォルトでproto2が適用される
+syntax = "proto3";
+
+
+// comment
+
+/*
+comment1
+comment2
+*/
+
