@@ -3,6 +3,9 @@
 // syntaxの記載を忘れると、デフォルトでproto2が適用される
 syntax = "proto3";
 
+package employee;
+
+import "proto/date.proto";
 
 // comment
 
@@ -27,6 +30,8 @@ message Employee {
     string text = 7;
     Video video = 8;
   }
+  //  別packageから呼び出しているので、「package名.message名」とする必要がある
+  date.Date birthday = 9;
 }
 
 // 列挙型
