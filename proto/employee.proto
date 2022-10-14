@@ -11,10 +11,23 @@ comment1
 comment2
 */
 
-
+// messageのタグ番号は1から始めなくてもいい
 message Employee {
   int32 id = 1; // 数値の値はタグ番号を示す
   string name = 2;
   string email = 3;
+  Occupation occupation = 4; // 列挙型はmessageのフィールドでスカラ型のように型として利用できる
+}
+
+// 列挙型
+// フィールドには型は不要で、全て大文字で記述
+// タグ番号が0から始まる
+// 必ずタグ番号を0から始めないといけない
+// タグ番号0はunknownとする慣例がある
+enum Occupation {
+  OCCUPATION_UNKNOWN = 0;
+  ENGINEER = 1;
+  DESIGNER = 2;
+  MANAGER = 3;
 }
 
