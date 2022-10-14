@@ -17,6 +17,17 @@ message Employee {
   string name = 2;
   string email = 3;
   Occupation occupation = 4; // 列挙型はmessageのフィールドでスカラ型のように型として利用できる
+  repeated string phone_number = 5; // repeated: 配列のように複数の要素を含められる
+  // map: keyとvalueを持つ連想配列のようなフィールドを扱える
+  // mapにはrepeatedをつけることはできない
+  map<string, Project> project = 6;
+  // oneof: 複数の方のどれか一つを値として持つフィールドを指定する際に使う
+  // oneofにはrepeatedをつけることはできない
+  oneof profile {
+    string text = 7;
+    Video video = 8;
+  }
+
 }
 
 // 列挙型
@@ -31,3 +42,5 @@ enum Occupation {
   MANAGER = 3;
 }
 
+message Project {}
+message Video {}
